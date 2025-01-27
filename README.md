@@ -6,10 +6,7 @@ Ollama AI Assistant
 ### R1
 ```cmd
 ollama run deepseek-r1:1.5b
-```
-```cmd
 ollama run deepseek-r1:8b
-```cmd
 ollama run deepseek-r1:14b
 ```
 ### Vision Model
