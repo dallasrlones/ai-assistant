@@ -1,24 +1,23 @@
-# Dockerfile.react
+# Use the official Node.js 18 Alpine image
 FROM node:18-alpine
 
-# Set working directory
+# Set the working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
+# Copy package.json and package-lock.json
 COPY ai-helper/package*.json ./
+
+# Install all dependencies (including Next.js)
 RUN npm install
 
 # Copy the rest of the application code
 COPY ai-helper/ ./
 
-# Build the React app for production
+# Build the Next.js app
 RUN npm run build
 
-# Install 'serve' globally to serve the app
-# RUN npm install -g serve
-
-# Expose port 3000 for the React app
+# Expose port 3000 (Next.js default)
 EXPOSE 3000
 
-# Serve the build folder
+# Start the Next.js server
 CMD ["npm", "run", "start"]
