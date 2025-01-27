@@ -1,0 +1,36 @@
+services:
+  react-app:
+    build:
+      context: .
+      dockerfile: Dockerfile.react
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true # For live reload (optional)
+    volumes:
+      - ./ai-helper:/app # For live reload, if needed
+    depends_on:
+      - api
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    ports:
+      - "1337:1337" # Map API to host
+    depends_on:
+      - chromadb
+    environment:
+      - NODE_ENV=production
+      - CHROMA_DB_HOST=http://chromadb:8000 # ChromaDB service URL for the API
+
+  chromadb:
+    image: chromadb/chroma
+    container_name: chromadb
+    ports:
+      - "8000:8000" # Expose ChromaDB
+    volumes:
+      - chroma_data:/data # Persist Chroma data
+
+volumes:
+  chroma_data: # Named volume for ChromaDB storage

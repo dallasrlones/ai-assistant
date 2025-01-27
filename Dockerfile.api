@@ -1,0 +1,18 @@
+# Dockerfile.api
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR /app
+
+# Copy API code
+COPY api/package*.json ./
+COPY api/ ./
+
+# Install dependencies
+RUN npm install
+
+# Expose port for the API
+EXPOSE 1337
+
+# Start the Node.js API
+CMD ["npm", "start"]
