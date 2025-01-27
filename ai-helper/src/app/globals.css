@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "nasalization";
+  src: url("/fonts/nasalization/nasalization.otf") format("opentype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "manga_temple";
+  src: url("/fonts/manga_temple/mangat.tff") format("truetype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "squids";
+  src: url("/fonts/game_of_squids/squids.otf") format("opentype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "ethno";
+  src: url("/fonts/ethnocentric/ethno.otf") format("opentype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "badaboom";
+  src: url("/fonts/badaboom_bb/BADABB__.TTF") format("truetype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "manga";
+  src: url("/fonts/manga_temple/mangat.ttf") format("truetype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "matrix";
+  src: url("/fonts/matrix.ttf") format("truetype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "glass";
+  src: url("/fonts/broken_glass/BrokenGlass.otf") format("opentype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "rights";
+  src: url("/fonts/all_rights_reserved/rights.ttf") format("truetype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "drpunk";
+  src: url("/fonts/doctor_punk.otf") format("opentype");
+  font-style: normal; /* Normal style */
+}
+
+@font-face {
+  font-family: "helvpunk";
+  src: url("/fonts/HelveticaPunk.ttf") format("truetype");
+  font-style: normal; /* Normal style */
+}
+
+/* styles.css */
+.hide-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer/Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.pad-10 {
+  padding: 10px;
+}
+
+body {
+  background-color: #232323;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.thoughts-container {
+  height: 25px;
+  padding: 10p;
+  padding-bottom: 0px;
+  border-radius: 5px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  color: white;
+}
