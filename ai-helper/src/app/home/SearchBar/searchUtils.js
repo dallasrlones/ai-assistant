@@ -39,6 +39,10 @@ export const buildMethods = ({ setThoughts, history, setHistory, prompt, setProm
 
     const askApiHandler = async () => {
         if (selectedFile != null) {
+            setTimeout(() => {
+                setSelectedFile(null);
+                setPrompt("");
+            }, 1000);
             await handleAnalyzeImage(prompt, setPrompt, selectedFile, setHistory, setSelectedFile, setLoading);
         } else {
             if (!prompt.trim()) return;
@@ -50,7 +54,7 @@ export const buildMethods = ({ setThoughts, history, setHistory, prompt, setProm
                 { role: "system", content: "" },
             ]);
             const currentPrompt = `${prompt}`;
-            setPrompt("");
+            setTimeout(() => { setPrompt(""); }, 1000)
             await askApi(currentPrompt, history, onChunk, onComplete, onError);
         }
     };

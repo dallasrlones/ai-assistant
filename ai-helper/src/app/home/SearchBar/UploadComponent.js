@@ -12,7 +12,7 @@ const hiddenFileInputStyles = {
     display: "none",
 };
 
-const UploadComponent = ({ loading, setSelectedFile }) => {
+const UploadComponent = ({ loading, selectedFile, setSelectedFile }) => {
     const fileInputRef = useRef(null)
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]); // Set the selected file
@@ -27,10 +27,11 @@ const UploadComponent = ({ loading, setSelectedFile }) => {
 
     return (
         <>
-            <FaUpload
+            {selectedFile && <button onClick={() => { setSelectedFile(null) }} style={{ color: 'white', padding: 5, backgroundColor: 'darkred', borderRadius: 5, marginRight: 5 }}>X</button>}
+            {!selectedFile && <FaUpload
                 style={{ ...uploadIconStyles, color: loading == true ? 'lightblue' : 'white' }}
                 onClick={handleIconClick} // Trigger the file input dialog
-            />
+            />}
             <input
                 disabled={loading}
                 type="file"

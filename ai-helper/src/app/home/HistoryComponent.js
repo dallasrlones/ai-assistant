@@ -104,7 +104,7 @@ const HistoryComponent = ({ history }) => {
                     <div key={index} style={systemStyles}>
                         {message.img ? (
                             <div style={{ boxShadow: '0px 0px 14px 3px #767676 inset', border: '1px solid white', borderRadius: 15, overflow: 'hidden', padding: 15, marginBottom: 10, backgroundColor: '#1d1d1d' }}>
-                                <image src={`data:image/png;base64,${message.img}`} style={{ margin: '0 auto', maxHeight: 300, marginBottom: 20 }} />
+                                <img src={`data:image/png;base64,${message.img}`} style={{ margin: '0 auto', maxHeight: 300, marginBottom: 20 }} />
                             </div>
                         ): ''}
                         {renderMessageContent(message.content)}

@@ -33,7 +33,7 @@ const SearchBarComponent = ({
             {loading ? <ColorBar /> : ''}
             <div style={searchBarContainer}>
                 <SearchInputComponent loading={loading} prompt={prompt} setPrompt={setPrompt} askApiHandler={askApiHandler} />
-                <UploadComponent loading={loading} askApiHandler={askApiHandler} setSelectedFile={setSelectedFile} />
+                <UploadComponent loading={loading} askApiHandler={askApiHandler} selectedFile={selectedFile} setSelectedFile={setSelectedFile} />
                 <SearchButtonComponent loading={loading} askApiHandler={askApiHandler} />
             </div>
         </>
